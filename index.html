@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buya Hamka House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        font-family: Raleway;
+        background-color: #E4E6C3;
+        color: #222725;
+      }
+
+      a {
+        text-decoration: none;
+        color: #E4E6C3;
+      }
+
+      p {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      
+
+      .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+        height: 80px;
+        background-color:#222725;
+        z-index: 50;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+      }
+
+      main {
+        padding-top: 150px;
+      }
+
+      .hero-header {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 60px;
+      }
+
+      .section-list {
+        display: flex;
+        height: 400px;
+        flex-direction: row;
+      }
+
+      @media (max-width: 700px) {
+        .section-list {
+          flex-direction: column;
+          height: auto;
+          margin-bottom: 70px;
+        }
+
+        .section-1,
+        .section-2 {
+           margin-top: 100px;
+        }
+      }
+
+      .section-1,
+      .section-2 {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .section-1 .photo-card {
+        transform: rotate(-10deg);
+      }
+
+      .section-2 .photo-card {
+        transform: rotate(10deg);
+      }
+
+      
+
+      .photo-card {
+        width: 350px;
+        height: 350px;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid black;
+        background-color: white;
+        color: #222725;
+      }
+
+      .card-img {
+        background-color: gray;
+        width: 280px;
+        height: 280px;
+        margin-bottom: 16px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .photo-card p {
+        font-size: 20px;
+      }
+
+      .dapur-subSection-lists,
+      .lorong-subSection-lists {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "box1 box2 box3";
+        margin-top: 40px;
+        justify-items: center;
+
+        background-color: #222725;
+        color: #E4E6C3;
+      }
+
+      @media (max-width: 700px) {
+        .dapur-subSection-lists,
+        .lorong-subSection-lists {
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto auto;
+          grid-template-areas: 
+          "box2 box2"
+          "box1 box3";
+        }
+
+        .left-list,
+        .right-list {
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+      }
+
+      .left-list,
+      .right-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .dapur-subSection-lists h3,
+      .lorong-subSection-lists h3 {
+        text-decoration: underline;
+      }
+
+      .subSection-1 {
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: 
+        "subSection-rules subSection-card";
+      }
+
+      @media (max-width: 700px) {
+        .subSection-1 {
+          grid-template-columns: auto;
+          grid-template-rows: 1fr 1fr;
+          grid-template-areas: 
+          "subSection-card"
+          "subSection-rules";
+          justify-items: center;
+        }
+      }
+
+      .subSection-1 .photo-card {
+        margin-right: 20px;
+        transform: rotate(-10deg);
+      }
+
+      .subSection-2 {
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-areas: 
+        "subSection-card subSection-rules";
+      }
+
+      @media (max-width: 700px) {
+        .subSection-2 {
+          grid-template-columns: auto;
+          grid-template-rows: 1fr 1fr;
+          grid-template-areas: 
+          "subSection-card"
+          "subSection-rules";
+          justify-items: center;
+        }
+
+        .photo-card {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+
+      .subSection-2 .photo-card {
+        margin-left: 30px;
+        transform: rotate(10deg);
+      }
+
+      .left {
+        padding-top: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+
+      .left li {
+        font-size: 18px;
+      }
+
+      li span {
+        font-weight: bold;
+      }
+
+      li + li {
+        margin-top: 10px;
+      }
+
+      .batasAlasKaki {
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+      }
+
+      
+
+      .break {
+        display: none;
+      }
+
+      @media (max-width: 700px) {
+        .break {
+          display: block;
+        }
+      }
+
+      .batasAlasKaki {
+        background-color: #222725;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+
+      
+      
+    </style>
+  </head>
+  <body>
+
+    <!-- header -->
+    <header class="header">
+      <h1><a href="#">Buya Hamka House</a></h1>  
+    </header>
+
+    <main>
+      <div class="hero">
+        <h1 class="hero-header">Peraturan Rumah</h1>
+        <div class="section-list">
+          <div class="section-1">
+            <div class="photo-card">
+              <img src="./img/dapur[1].jpg" class="card-img"></img>
+              <p class="card-name">Bagian Dapur</p>
+            </div>
+          </div>
+          <div class="section-2">
+            <div class="photo-card">
+              <img src="./img/lorong.jpg" class="card-img"></img>
+              <p>Bagian Lorong</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="break">
+
+      <div class="dapur-wrap">
+        <div class="dapur-subSection-lists">
+          <div class="left-list list" style="grid-area: box1;">
+            <h3><a href="#">Meja Dapur</a></h3>
+            <h3><a href="#">Rak & Kompor</a></h3>
+          </div>
+          <div class="mid-list list" style="grid-area: box2;">
+            <div class="photo-card">
+              <img src="./img/dapur[1].jpg" class="card-img"></img>
+              <p class="card-name">Bagian Dapur</p>
+            </div>
+          </div>
+          <div class="right-list list" style="grid-area: box3">
+            <h3><a href="#">Wastafel</a></h3>
+          </div>
+        </div>
+
+        <div class="subSection-1 meja-dapur">
+          <div class="left" style="grid-area: subSection-rules;">
+            <h2>Meja Dapur</h2>
+            <ul>
+              <li>
+                -Tidak meninggalkan apapun setelah menggunakan meja dapur, baik itu sampah, piring, gelas,
+              kotak dan sebagainya. meja dapur harus kembali seperti semula --tidak ada benda apapun--
+              <span>ingat! kamu hanya diminta untuk bertanggung jawab!</span>
+              </li>
+            </ul>
+              
+          </div>
+          <div class="right" style="grid-area: subSection-card;">
+            <div class="photo-card">
+              <img src="./img/mejaDapur.jpg" class="card-img"></img>
+              <p class="card-name">Meja Dapur</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="subSection-2 Rak&Kompor">
+          <div class="left" style="grid-area: subSection-rules;">
+            <h2>Rak & Kompor</h2>
+            <ul>
+              <li>
+                -Harap taruh kembali barang barang yang diambil dari rak setelah menggunakan barang tersebut.
+              </li>
+              <li>
+                -Hanya ada 2 barang yang berada diatas kompor: wajan besar dan teflon sedang. selainnya mohon diletakkan kembali ke tempat semula.
+              </li>
+              <li>
+                -Penanak nasi dan panci kecil mohon dicuci bersih (atau di rendam air saja agar tidak sulit dibersihkan nantinya) kemudian taruh kembali di bagian bawah rak setelah dipakai.
+              </li>
+            </ul>
+              
+          </div>
+          <div class="right" style="grid-area: subSection-card;">
+            <div class="photo-card">
+              <img src="./img/rak[1].jpg" class="card-img"></img>
+              <p class="card-name">Rak & Kompor</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="subSection-1 Wastafel">
+          <div class="left" style="grid-area: subSection-rules;">
+            <h2>Wastafel</h2>
+            <ul>
+              <li>
+                -Tidak meniggalkan apapun (piring atau apapun itu) di wastafel setelah cuci piring baik di bagian dalam
+                atau luar wastafel.
+              </li>
+              <li>
+                -Jika wastafelnya kotor setelah kamu gunakan tolong berinisiatif untuk membersihkan sehingga air di wastafel
+                tidak menggenang nantinya.
+              </li>
+              <li>
+                -Hanya ada dua barang yang tetap berada di bagian wastafel: peniris minyak dan mangkok sabun cuci piring.
+                Mohon jangan tinggalkan barang apapun di sana setelah memakai dapur.
+              </li>
+            </ul>
+              
+          </div>
+          <div class="right" style="grid-area: subSection-card;">
+            <div class="photo-card">
+              <img src="./img/wastafel.jpg" class="card-img"></img>
+              <p class="card-name">Wastafel</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="lorong-wrap">
+        <div class="lorong-subSection-lists">
+          <div class="left-list list" style="grid-area: box1;">
+            <h3><a href="#">Alat Kebersihan</a></h3>
+          </div>
+          <div class="mid-list list" style="grid-area: box2;">
+            <div class="photo-card">
+              <img src="./img/lorong.jpg" class="card-img"></img>
+              <p class="card-name">Lorong</p>
+            </div>
+          </div>
+          <div class="right-list list" style="grid-area: box3">
+            <h3><a href="#">Rak Alas Kaki</a></h3>
+          </div>          
+        </div>
+
+        <div class="subSection-2 alatKebersihan">
+          <div class="left" style="grid-area: subSection-rules;">
+            <h2>Alat Kebersihan</h2>
+            <ul>
+              <li>
+                 -Harap taruh kembali semua alat kebersihan seperti sedia kala setelah memakainya.
+              </li>
+              <li>
+                -Jangan lupa mencabut kabel mesin cuci setela memakainya.
+              </li>
+            </ul>
+              
+          </div>
+          <div class="right" style="grid-area: subSection-card;">
+            <div class="photo-card">
+              <img src="./img/alat kebersihan.jpg" class="card-img"></img>
+              <p class="card-name">Alat Kebersihan</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="subSection-1 rakAlasKaki">
+          <div class="left" style="grid-area: subSection-rules;">
+            <h2>Rak Alas Kaki</h2>
+            <ul>
+              <li>
+                -Letakkan alas kaki dengan rapi di rak.
+              </li>
+              <li>
+                -Lepas alas kaki sebelum masuk ke bagian dalam rumah (pintu batas alas kaki).
+              </li>
+            </ul>
+              
+          </div>
+          <div class="right" style="grid-area: subSection-card;">
+            <div class="photo-card">
+              <img src="./img/rak alas kaki.jpg" class="card-img"></img>
+              <p class="card-name">Rak Alas Kaki</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="batasAlasKaki">
+        <div class="photo-card">
+          <img src="./img/BatasAlasKaki.jpg" class="card-img"></img>
+          <p class="card-name">Batas Alas Kaki</p>
+        </div>
+      </div>
+    </main>
+
+  </body>
+</html>
